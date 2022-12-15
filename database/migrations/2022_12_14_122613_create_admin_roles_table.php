@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAdminRolesTable extends Migration
 {
-    private const TABLE = 'admin_roles';
+    private const TABLE = 'admin_role';
 
     /**
      * Run the migrations.
