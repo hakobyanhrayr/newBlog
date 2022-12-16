@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreatePermissionRoleTable extends Migration
+class CreatePermissionsTable extends Migration
 {
-    private const TABLE = 'permission_role';
+    private const TABLE = 'permissions';
     /**
      * Run the migrations.
      *
@@ -15,9 +15,9 @@ class CreatePermissionRoleTable extends Migration
     public function up()
     {
         Schema::create(self::TABLE, function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('role_id')->index();
-            $table->unsignedBigInteger('permission_id')->index();
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('for');
             $table->timestamps();
         });
     }

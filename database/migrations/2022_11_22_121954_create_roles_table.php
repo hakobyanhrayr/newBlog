@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminsTable extends Migration
+class CreateRolesTable extends Migration
 {
-    private const TABLE = 'admins';
+    private const TABLE = 'roles';
 
     /**
      * Run the migrations.
@@ -16,11 +16,8 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create(self::TABLE, function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

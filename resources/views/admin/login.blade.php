@@ -24,7 +24,9 @@
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
             @include('includes.messages')
-            <form action="{{route('admin.login')}}" method="post">
+            <form
+{{--                action="{{route('admin.login')}}" --}}
+                method="post">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" name="email" placeholder="Email">

@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryPostsTable extends Migration
+class CreatePostTagsTable extends Migration
 {
-    private const TABLE = 'category_posts';
+    private const TABLE = 'post_tags';
 
     /**
      * Run the migrations.
@@ -16,15 +16,12 @@ class CreateCategoryPostsTable extends Migration
     public function up()
     {
         Schema::create(self::TABLE, function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('category_id')->index();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('post_id')->index();
+            $table->unsignedBigInteger('tag_id')->index();
             $table->timestamps();
 
-            $table->foreign('post_id')
-                ->references('id')
-                ->on('posts')
-                ->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 

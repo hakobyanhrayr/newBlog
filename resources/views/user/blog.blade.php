@@ -35,24 +35,6 @@
                                 {{ $post->created_at }}
                             </p>
                         </div>
-                        <div>
-                            <div style="display: flex;justify-content: space-between;align-items: center;margin-bottom: 15px;width: 120px">
-{{--                                <div>--}}
-{{--                                    <span>Status:{{ $post->status }}</span>--}}
-{{--                                </div>--}}
-                                <div style="padding-bottom: 10px; display: flex;align-items: center;width: 100px;justify-content: space-between">
-                                    <small>Like:  {{ $post->likes->count() }} </small>
-                                </div>
-                            </div>
-                            <div style="display: flex;justify-content: space-between;align-items: center;margin-bottom: 15px;width: 120px">
-{{--                                <div>--}}
-{{--                                    <span>Status:{{ $post->status }}</span>--}}
-{{--                                </div>--}}
-                                <div style="padding-bottom: 10px; display: flex;align-items: center;width: 100px;justify-content: space-between">
-                                    <small>Dislike:  {{ $post->dislikes->count() }} </small>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
 {{--                    --end----}}

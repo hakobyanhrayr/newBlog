@@ -2,15 +2,14 @@
 
 namespace App\Models\user;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+
 class Post extends Model
 {
-    use HasFactory;
-
     protected $table = "posts";
 
     protected $fillable = [
@@ -33,7 +32,7 @@ class Post extends Model
     /**
      * @return BelongsToMany
      */
-    public function category(): BelongsToMany
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class,'category_posts')->withTimestamps();
     }
@@ -49,8 +48,8 @@ class Post extends Model
     /**
      * @return HasMany
      */
-    public function dislikes(): HasMany
-    {
-        return $this->hasMany(Dislike::class);
-    }
+     public function dislikes(): HasMany
+     {
+         return $this->hasMany(Dislike::class);
+     }
 }

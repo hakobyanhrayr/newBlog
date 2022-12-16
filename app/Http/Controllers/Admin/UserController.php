@@ -38,7 +38,7 @@ class UserController extends Controller
     public function create():View
     {
         $roles = Role::get();
-
+//          dd($roles->toArray());
         return view('admin.user.create', compact('roles'));
     }
 
@@ -64,6 +64,10 @@ class UserController extends Controller
         ]);
 
         $user->roles()->sync($request->role);
+//           dd(111);
+        //  $user->save();
+        //  $user = Admin::create($request->all());
+        //  $user->roles()->sync($request->role);
 
         return redirect()->route('user.index')->with('message', 'Admin Create SuccessFully');
     }

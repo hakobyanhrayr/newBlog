@@ -17,7 +17,7 @@ class UserPostController extends Controller
      */
     public function show(int $id)
     {
-
+//        dd(1111);
         $post = Post::query()->findOrFail($id);
 
         return view('user.post',compact('post'));

@@ -60,6 +60,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+{{--                                    @dd($posts);--}}
                                      @foreach($posts as $post)
                                          <tr>
                                              <td>{{ $post->id }}</td>
